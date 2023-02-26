@@ -95,7 +95,7 @@ main {
   display: grid;
 }
 
-.result {
+.result-container {
   background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
   color: var(--white);
   text-align: center;
@@ -107,6 +107,7 @@ main {
   flex-direction: column;
   justify-content: space-between;
   padding: 2rem;
+  border-radius: 3rem;
 }
 
 .result-title {
@@ -160,19 +161,64 @@ main {
 }
 
 .detail {
-  background-color: var(--light-lavender);
   padding: 1rem;
   display: flex;
   justify-content: space-between;
   border-radius: 0.8rem;
+  color: var(--dark-gray-blue);
 }
 
 .detail-caption {
   font-weight: 700;
 }
 
+.detail-reaction {
+  background-color: hsla(0, 100%, 67%, 0.1);
+}
+.detail-memory {
+  background-color: hsla(39, 100%, 56%, 0.1);
+}
+.detail-verbal {
+  background-color: hsla(166, 100%, 37%, 0.1);
+}
+.detail-visual {
+  background-color: hsla(234, 85%, 45%, 0.1);
+}
+
+.detail-reaction-cap {
+  color: var(--light-red);
+}
+.detail-memory-cap {
+  color: var(--orangey-yellow);
+}
+.detail-verbal-cap {
+  color: var(--green-teal);
+}
+.detail-visual-cap {
+  color: var(--cobalt-blue);
+}
+
+.detail-caption::before {
+  margin-right: 0.5rem;
+  position: relative;
+  top: 3px;
+}
+
+.detail-reaction-cap::before {
+  content: url(./assets/images/icon-reaction.svg);
+}
+.detail-memory-cap::before {
+  content: url(./assets/images/icon-memory.svg);
+}
+.detail-verbal-cap::before {
+  content: url(./assets/images/icon-verbal.svg);
+}
+.detail-visual-cap::before {
+  content: url(./assets/images/icon-visual.svg);
+}
+
 strong {
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .btn-continue {
@@ -186,4 +232,25 @@ strong {
 .btn-continue:hover {
   background-color: var(--cobalt-blue);
   cursor: pointer;
+}
+
+@media (width>=1024px) {
+  main {
+    min-height: 100vh;
+    place-content: center;
+  }
+
+  .main-container {
+    grid-template-columns: 1fr 1fr;
+    box-shadow: 10px 10px 19px 0px rgba(0, 0, 0, 0.26);
+    border-radius: 3rem;
+  }
+
+  .container-inner {
+    max-width: 320px;
+  }
+
+  /* .result-container {
+    background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+  } */
 }
